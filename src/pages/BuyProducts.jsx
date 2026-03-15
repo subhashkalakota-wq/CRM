@@ -16,7 +16,7 @@ const AuthPanel = ({ onAuth, sfError }) => {
 
   const handleSalesforceLogin = () => {
     setSfLoading(true);
-    window.location.href = 'http://localhost:5000/api/auth/salesforce';
+    window.location.href = '/api/auth/salesforce';
   };
 
   const handleSubmit = async (e) => {

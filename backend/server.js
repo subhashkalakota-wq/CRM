@@ -1783,3 +1783,24 @@ app.get('/api/store/top-products', (req, res) => {
     software: softwareTop
   });
 });
+
+// ==========================================
+// Serve Static Frontend (Production)
+// ==========================================
+if (process.env.NODE_ENV === 'production') {
+  const distPath = path.join(__dirname, '../dist');
+  app.use(express.static(distPath));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(distPath, 'index.html'));
+  });
+} else {
+  app.get('/', (req, res) => {
+    res.send('AuraCRM AI Backend is Running...');
+  });
+}
+
+app.listen(PORT, () => {
+  console.log(`🚀 AuraCRM Server running on port ${PORT}`);
+  console.log(`📡 Mode: ${process.env.NODE_ENV || 'development'}`);
+});

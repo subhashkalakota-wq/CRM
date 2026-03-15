@@ -15,7 +15,7 @@ const DealSuccessPredictor = ({ customer }) => {
     const fetchPrediction = async () => {
       setLoading(true);
       try {
-        const response = await fetch(`http://localhost:5000/api/deal-prediction/${customer.id}`);
+        const response = await fetch(`/api/deal-prediction/${customer.id}`);
         const result = await response.json();
         if (result.success) {
           setPrediction(result.data);

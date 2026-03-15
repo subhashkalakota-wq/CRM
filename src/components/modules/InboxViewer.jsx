@@ -122,7 +122,7 @@ const InboxViewer = ({ customer }) => {
     setIsAnalyzing(true);
     setAnalysisResult('');
     try {
-      const res = await fetch('http://localhost:5000/api/analyze-email', {
+      const res = await fetch('/api/analyze-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ emailBody: selectedEmail.body })
