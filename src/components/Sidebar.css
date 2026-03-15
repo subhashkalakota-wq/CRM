@@ -1,0 +1,127 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  border-radius: 0 24px 24px 0 !important;
+  border-left: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  background: rgba(255, 248, 240, 0.9) !important;
+  box-shadow: 10px 0 30px rgba(0,0,0,0.02);
+  backdrop-filter: blur(20px);
+}
+
+.sidebar-header {
+  padding: 32px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-btn {
+  display: none;
+  color: var(--color-dark-charcoal);
+}
+
+.sidebar-nav {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 16px 24px;
+}
+
+/* Custom scrollbar for sidebar */
+.sidebar-nav::-webkit-scrollbar {
+  width: 4px;
+}
+.sidebar-nav::-webkit-scrollbar-thumb {
+  background: var(--color-glass-border);
+  border-radius: 4px;
+}
+
+.nav-group {
+  margin-bottom: 12px;
+}
+
+.nav-group-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(43, 43, 43, 0.5);
+  margin-bottom: 12px;
+  padding: 0 12px;
+}
+
+.nav-group ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  color: var(--color-dark-charcoal);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all var(--transition-fast);
+}
+
+.nav-item:hover {
+  background: rgba(167, 146, 119, 0.1);
+}
+
+.nav-item.active {
+  background: linear-gradient(135deg, var(--color-dark-charcoal), #454545);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transform: scale(1.02);
+}
+
+.nav-item:active {
+  transform: scale(0.98);
+}
+
+.sidebar-footer {
+  padding: 16px;
+  border-top: 1px solid var(--color-glass-border);
+}
+
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(43, 43, 43, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 90;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform var(--transition-normal);
+  }
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  .sidebar-overlay.show {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .close-btn {
+    display: block;
+  }
+}

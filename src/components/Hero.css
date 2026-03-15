@@ -1,0 +1,127 @@
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  min-height: calc(100vh - 100px);
+  padding-top: 40px;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-glass-bg);
+  border: 1px solid var(--color-soft-gold);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.hero-title {
+  font-size: 4rem;
+  margin-bottom: 24px;
+  letter-spacing: -1px;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  color: #4A4A4A;
+  margin-bottom: 40px;
+  max-width: 520px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.hero-visual {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mock-dashboard {
+  width: 100%;
+  max-width: 500px;
+  height: 400px;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.mock-header {
+  padding: 12px;
+  border-bottom: 1px solid var(--color-glass-border);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.mock-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.dot.red { background: #FF5F56; }
+.dot.yellow { background: #FFBD2E; }
+.dot.green { background: #27C93F; }
+
+.mock-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mock-card {
+  background: rgba(167, 146, 119, 0.15);
+  border-radius: 8px;
+}
+
+.mock-summary { height: 80px; width: 100%; }
+.mock-grid { display: flex; gap: 16px; height: 180px; }
+.mock-chart { flex: 2; }
+.mock-list { flex: 1; }
+
+.mock-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background: var(--color-soft-gold);
+  filter: blur(80px);
+  opacity: 0.15;
+  z-index: -1;
+}
+
+@media (max-width: 992px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 80px;
+  }
+  .hero-content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .hero-title { font-size: 3rem; }
+}

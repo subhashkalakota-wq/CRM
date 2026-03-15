@@ -1,0 +1,90 @@
+.architecture-section {
+  padding: 100px 24px;
+}
+
+.arch-flow-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 40px 0;
+}
+
+.arch-node {
+  flex: 1;
+  min-width: 250px;
+  max-width: 320px;
+  padding: 32px 24px;
+  text-align: center;
+  position: relative;
+}
+
+.node-highlight {
+  border: 1px solid var(--color-soft-gold);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.pulse-ring {
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  border-radius: 16px;
+  border: 2px solid var(--color-soft-gold);
+  animation: pulse 2s infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.05); opacity: 0; }
+}
+
+.node-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.bg-blue { background-color: #00A1E0; } /* Salesforce blue approx */
+.bg-gold { background-color: var(--color-soft-gold); }
+.bg-dark { background-color: var(--color-dark-charcoal); }
+
+.arch-node h4 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.arch-node p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.flow-arrow {
+  animation: bounceRight 2s infinite;
+}
+
+@keyframes bounceRight {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+}
+
+@media (max-width: 800px) {
+  .arch-flow-container {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .flow-arrow {
+    transform: rotate(90deg);
+    animation: bounceDown 2s infinite;
+  }
+  @keyframes bounceDown {
+    0%, 100% { transform: translateY(0) rotate(90deg); }
+    50% { transform: translateY(10px) rotate(90deg); }
+  }
+}
