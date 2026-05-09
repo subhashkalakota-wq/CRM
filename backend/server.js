@@ -1044,10 +1044,6 @@ app.post('/api/analyze-email', async (req, res) => {
 
 
 
-app.listen(PORT, () => {
-  console.log(`✅ AI Sales Assistant Backend is running on port ${PORT}`);
-});
-
 // ==========================================
 // Buy Products Store — In-Memory Database
 // ==========================================
@@ -1279,7 +1275,7 @@ softwareProductsDB.forEach((product) => {
 // ==========================================
 app.get('/api/auth/salesforce', (req, res) => {
   const clientId = process.env.SALESFORCE_CLIENT_ID;
-  const callbackUrl = process.env.SALESFORCE_CALLBACK_URL || 'http://localhost:5000/api/auth/salesforce/callback';
+  const callbackUrl = process.env.SALESFORCE_CALLBACK_URL || 'http://localhost:6000/api/auth/salesforce/callback';
   const sfBaseUrl = 'https://login.salesforce.com';
   
   const authUrl = `${sfBaseUrl}/services/oauth2/authorize?` +
